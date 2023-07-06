@@ -1,8 +1,18 @@
-import Image from 'next/image'
+import { getProjects } from "@/sanity/sanity-utils"
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects()
   return (
-   <main>Inicio</main>
+   <main className="text-center p-2">
+    <h1 className="text-4xl">Inicio</h1>
+    <div>
+      {projects.map((project) =>(
+        <div key={project._id}>{project.name}</div>
+      ))}
+    </div>
+   </main>
     
   )
 }
+
+
