@@ -14,7 +14,6 @@ export default async function userPage() {
   const posts = await client.fetch(query);
 return(
    <main className="text-center p-2">
-    User
     <BlogList posts={posts} />
    </main>
     
