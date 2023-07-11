@@ -9,7 +9,7 @@ function Header() {
             <Link href="/">
                 <Image className='rounded-full' src="/algo.jpg" width={50} height={50} alt="logo"/>
             </Link>
-            <h1>Cabecera</h1>
+            <h1>F5antos</h1>
         </div>
         <div>
           <Link href="/" className='px-5 py-3 text-sm md:text-base bg-gray-900 text-yellow-200 flex items-center  text-center'>
