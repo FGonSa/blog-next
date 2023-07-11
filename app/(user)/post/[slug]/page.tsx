@@ -6,13 +6,29 @@ import Image from "next/image";
 import React from "react";
 import {PortableText} from "@portabletext/react";
 import { RichTextComponents } from "@/app/components/RichTextComponent";
-
+import Link from "next/link";
+import { Metadata, ResolvingMetadata } from 'next'
 
 type Props = {
   params: {
     slug: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined }
 };
+
+//METADATA DINÁMICA
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const id = params.slug
+
+  return{
+    title: "Franky's Next Blog - " + id,
+    description: id
+  }
+}
 
 export const revalidate = 60; // revalidate this page every 60 seconds
 
@@ -40,10 +56,14 @@ async function Post({ params: { slug } }: Props) {
 
   const post: Post = await client.fetch(query, { slug: slug });
 
+  
+
   return (
     <article className="px-10 pb-28">
+      <Link className="font-semibold" href="/">🡐 Volver</Link>
       <section className="space-y-2 border border-[#F7AB0A] text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
+          
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
             <Image
               className="object-cover object-center mx-auto"
