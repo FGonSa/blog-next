@@ -12,7 +12,7 @@ function Header() {
             <h1>F5antos</h1>
         </div>
         <div>
-          <Link href="/" className='px-5 py-3 text-sm md:text-base bg-gray-900 text-yellow-200 flex items-center  text-center'>
+          <Link href="/" className='px-5 py-3 text-sm md:text-base bg-[#45b1e8] text-gray-800 flex items-center  text-center'>
           Acceder
           </Link>
         </div>
