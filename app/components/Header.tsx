@@ -7,14 +7,10 @@ function Header() {
     <header className='flex items-center justify-between space-x-2 font-bold px-10 py-5'>
         <div className='flex items-center space-x-2'>
             <Link href="/">
-                <Image className='rounded-full' src="/algo.jpg" width={50} height={50} alt="logo"/>
+            <h1 className='text-transparent font-bold tracking-tight  bg-clip-text bg-gradient-to-r from-yellow-300 to-pink-400'>F5antos</h1>
             </Link>
-            <h1>F5antos</h1>
         </div>
         <div>
-          <Link href="/" className='px-5 py-3 text-sm md:text-base bg-[#45b1e8] text-gray-800 flex items-center  text-center'>
-          Acceder
-          </Link>
         </div>
     </header>
   )
